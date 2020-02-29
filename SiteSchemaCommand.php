@@ -41,7 +41,7 @@ class SiteSchemaCommand extends DrushCommands {
       $rows[] = [
         'type' => 'schema',
         'module' => $module,
-        'value' => $schema,
+        'value' => (string) $schema,
       ];
     }
     foreach ($post_update_functions as $function) {
