@@ -1,0 +1,10 @@
+{
+    "name": "eiriksm/site-schema",
+    "description": "Allows you to get the complete picture of a site schema, to use for CI for example",
+    "type": "drupal-drush",
+    "require": {
+        "drush/drush": "~9||~10"
+    },
+    "license": "GPL-2.0+",
+    "authors": []
+}
