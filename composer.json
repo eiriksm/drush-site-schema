@@ -6,5 +6,13 @@
         "drush/drush": "~9||~10"
     },
     "license": "GPL-2.0+",
-    "authors": []
+    "authors": [],
+    "config": {
+      "platform": {
+        "php": "7.0.0 "
+      }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
 }
