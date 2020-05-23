@@ -1,4 +1,4 @@
-# drush-site-schema
+# drush site-schema
 
 [![Build Status](https://travis-ci.com/eiriksm/drush-site-schema.svg?branch=master)](https://travis-ci.com/eiriksm/drush-site-schema)
 [![Packagist](https://img.shields.io/packagist/v/eiriksm/site-schema.svg)](https://packagist.org/packages/eiriksm/site-schema)
