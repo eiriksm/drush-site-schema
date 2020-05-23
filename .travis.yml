@@ -1,0 +1,32 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
+  - 7.4
+
+services:
+  - mysql
+
+env:
+  global:
+    - DATABASE='drupal'
+    - DB_USERNAME='root'
+    - SCHEMA_PATH="/tmp/test-schema.json"
+
+install:
+  - composer install
+
+script:
+  # Run automated tests.
+  - cd .. && composer create-project drupal/recommended-project test-project --no-interaction
+  - cd test-project
+  - composer require drush/drush
+  - ./vendor/bin/drush si minimal --db-url="mysql://$DB_USERNAME@127.0.0.1/$DATABASE" -y
+  - mkdir -p drush/Commands/contrib
+  - cp -r ../drush-site-schema drush/Commands/contrib/site-schema
+  - ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH
+  - cd ../drush-site-schema
+  - ./vendor/bin/phpunit
