@@ -1,6 +1,9 @@
 # drush-site-schema
 
-Get the complete picture of a site schema (updates and post updates).
+[![Build Status](https://travis-ci.com/eiriksm/drush-site-schema.svg?branch=master)](https://travis-ci.com/eiriksm/drush-site-schema)
+[![Packagist](https://img.shields.io/packagist/v/eiriksm/site-schema.svg)](https://packagist.org/packages/eiriksm/site-schema)
+
+Get the complete picture of a Drupal site schema (updates and post updates).
 
 This can be useful to always check in the database update schema for your site, so you have a conscious relationship to what effect an update will have on your site.
 
