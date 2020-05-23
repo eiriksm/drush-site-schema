@@ -27,6 +27,6 @@ script:
   - ./vendor/bin/drush si minimal --db-url="mysql://$DB_USERNAME@127.0.0.1/$DATABASE" -y
   - mkdir -p drush/Commands/contrib
   - cp -r ../drush-site-schema drush/Commands/contrib/site-schema
-  - drush site-schema --format=json > $SCHEMA_PATH
+  - ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH
   - cd ../drush-site-schema
   - ./vendor/bin/phpunit
