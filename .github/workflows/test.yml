@@ -1,0 +1,62 @@
+name: Test
+on:
+  - push
+  - pull_request
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: 'ubuntu-20.04'
+    env:
+      DATABASE: drupal
+      DB_USERNAME: root
+      SCHEMA_PATH: /tmp/test-schema.json
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "7.0"
+          - "7.1"
+          - "7.2"
+          - "7.3"
+          - "7.4"
+        composer-version:
+          - "1"
+          - "2"
+    steps:
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Update composer
+        run: composer --verbose self-update --${{ matrix.composer-version }}
+
+      - name: Dump composer verson
+        run: composer --version
+
+      - name: Validate composer.json
+        run: composer --verbose validate
+
+      - name: Install dependencies
+        run: composer --verbose install
+
+      - name: Run tests
+        run: |
+          cd .. && composer create-project drupal/recommended-project:8.8.6 test-project --no-interaction
+          cd test-project
+          composer require drush/drush
+          ./vendor/bin/drush si minimal --db-url="mysql://$DB_USERNAME@127.0.0.1/$DATABASE" -y
+          mkdir -p drush/Commands/contrib
+          cp -r ../drush-site-schema drush/Commands/contrib/site-schema
+          ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH
+          cd ../drush-site-schema
+          ./vendor/bin/phpunit
