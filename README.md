@@ -55,7 +55,7 @@ $ drush site-schema
   post_update                                    block_post_update_fix_negate_in_conditions
   post_update                                    comment_post_update_add_ip_address_setting
   post_update                                    comment_post_update_enable_comment_admin_view
-  ... and so on
+  ... and so on.
 ```
 
 Output the entire schema in json
