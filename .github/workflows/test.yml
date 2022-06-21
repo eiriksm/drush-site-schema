@@ -19,8 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.0"
-          - "7.1"
           - "7.2"
           - "7.3"
           - "7.4"
@@ -55,9 +53,9 @@ jobs:
 
       - name: Run tests
         run: |
-          cd .. && composer create-project drupal/recommended-project:8.8.6 test-project --no-interaction
+          cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
           cd test-project
-          composer require drush/drush
+          composer require drush/drush:^10
           ./vendor/bin/drush si minimal --db-url="mysql://$DB_USERNAME:$DB_PASSWORD@db/$DATABASE" -y
           mkdir -p drush/Commands/contrib
           cp -r ../drush-site-schema drush/Commands/contrib/site-schema
