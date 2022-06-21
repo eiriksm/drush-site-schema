@@ -7,9 +7,13 @@ jobs:
   test:
     name: Run tests
     runs-on: 'ubuntu-20.04'
+    services:
+      db:
+        image: mysql:5.7
     env:
       DATABASE: drupal
       DB_USERNAME: root
+      DB_PASSWORD: root
       SCHEMA_PATH: /tmp/test-schema.json
     strategy:
       fail-fast: false
@@ -54,7 +58,7 @@ jobs:
           cd .. && composer create-project drupal/recommended-project:8.8.6 test-project --no-interaction
           cd test-project
           composer require drush/drush
-          ./vendor/bin/drush si minimal --db-url="mysql://$DB_USERNAME@127.0.0.1/$DATABASE" -y
+          ./vendor/bin/drush si minimal --db-url="mysql://$DB_USERNAME:$DB_PASSWORD@db/$DATABASE" -y
           mkdir -p drush/Commands/contrib
           cp -r ../drush-site-schema drush/Commands/contrib/site-schema
           ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH
