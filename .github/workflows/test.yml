@@ -49,7 +49,7 @@ jobs:
         run: |
           cd .. && composer create-project drupal/recommended-project:8.8.6 test-project --no-interaction
           cd test-project
-          composer require drush/drush:^10
+          composer require drush/drush:^9
           ./vendor/bin/drush si minimal --db-url=sqlite://sites/default/files/.ht.sqlite -y
           mkdir -p drush/Commands/contrib
           cp -r ../drush-site-schema drush/Commands/contrib/site-schema
