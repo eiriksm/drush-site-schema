@@ -49,7 +49,7 @@ jobs:
           cd test-project
           composer require drush/drush:^9
       - name: install drupal 
-        if: matrix.drupal_version == '9'
+        if: ${{ matrix.drupal_version == '9' && matrix.php-version != '7.2' }}
         run: |
           cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
           cd test-project
