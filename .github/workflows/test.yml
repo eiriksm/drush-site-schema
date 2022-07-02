@@ -55,6 +55,7 @@ jobs:
           cd test-project
           composer require drush/drush:^10
       - name: run tests
+        if: ${{ matrix.php-version != '7.2' && matrix.drupal_version != '9' }}
         env:
           DRUPAL_VERSION: ${{ matrix.drupal_version }}
         run: |
