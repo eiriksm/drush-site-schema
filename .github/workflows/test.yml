@@ -17,8 +17,8 @@ jobs:
           - "7.3"
           - "7.4"
         drupal_version:
-          - "1"
-          - "2"
+          - "8"
+          - "9"
     steps:
       - name: Dump matrix context
         env:
