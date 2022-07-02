@@ -16,9 +16,13 @@ jobs:
           - "7.2"
           - "7.3"
           - "7.4"
-        drupal_version:
+        drupal-version:
           - "8"
           - "9"
+        drush-version:
+          - "9"
+          - "10"
+          - "11"
     steps:
       - name: Dump matrix context
         env:
@@ -43,21 +47,24 @@ jobs:
         run: composer --verbose install
 
       - name: Install drupal 
-        if: matrix.drupal_version == '8'
+        if: matrix.drupal-version == '8'
         run: |
           cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
           cd test-project
           composer require drush/drush:^9
       - name: install drupal 
-        if: ${{ matrix.drupal_version == '9' && matrix.php-version != '7.2' }}
+        if: ${{ matrix.drupal-version == '9' && matrix.php-version != '7.2' }}
         run: |
           cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
-          cd test-project
-          composer require drush/drush:^10
+      - name: install Drush
+        if ${{ matrix.drupal-version == '9' && matrix.php-version != '7.2' }}
+        run: |
+          cd ../test-project
+          composer require drush/drush:^${{ matrix.drush-version }}
       - name: run tests
-        if: ${{ matrix.php-version != '7.2' && matrix.drupal_version != '9' }}
+        if: ${{ matrix.php-version != '7.2' && matrix.drupal-version != '9' }}
         env:
-          DRUPAL_VERSION: ${{ matrix.drupal_version }}
+          DRUPAL_VERSION: ${{ matrix.drupal-version }}
         run: |
           cd ..
           cd test-project
