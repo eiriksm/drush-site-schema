@@ -57,11 +57,6 @@
     {
         "type": "post_update",
         "module": "",
-        "value": "block_post_update_disable_blocks_with_missing_contexts"
-    },
-    {
-        "type": "post_update",
-        "module": "",
         "value": "block_post_update_disabled_region_update"
     },
     {
