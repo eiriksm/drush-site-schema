@@ -50,7 +50,7 @@ jobs:
           composer require drush/drush:^9
       - name: install drupal 
         if: matrix.drupal_version == "9"
-         run: |
+        run: |
           cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
           cd test-project
           composer require drush/drush:^10
