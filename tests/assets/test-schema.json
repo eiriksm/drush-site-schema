@@ -46,11 +46,6 @@
     },
     {
         "type": "schema",
-        "module": "system",
-        "value": "8805"
-    },
-    {
-        "type": "schema",
         "module": "text",
         "value": "8000"
     },
