@@ -26,6 +26,11 @@
     },
     {
         "type": "schema",
+        "module": "minimal",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
         "module": "node",
         "value": "8700"
     },
@@ -41,6 +46,16 @@
     },
     {
         "type": "schema",
+        "module": "sqlite",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "system",
+        "value": "8901"
+    },
+    {
+        "type": "schema",
         "module": "text",
         "value": "8000"
     },
@@ -51,88 +66,53 @@
     },
     {
         "type": "schema",
-        "module": "minimal",
-        "value": "8000"
+        "module": "user",
+        "value": "9301"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "block_post_update_fix_negate_in_conditions"
+        "value": "block_post_update_replace_node_type_condition"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "dblog_post_update_convert_recent_messages_to_view"
+        "value": "node_post_update_glossary_view_published"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "field_post_update_email_widget_size_setting"
+        "value": "node_post_update_modify_base_field_author_override"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "field_post_update_entity_reference_handler_setting"
+        "value": "node_post_update_rebuild_node_revision_routes"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "field_post_update_remove_handler_submit_setting"
+        "value": "system_post_update_claro_dropbutton_variants"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "field_post_update_save_custom_storage_property"
+        "value": "system_post_update_delete_authorize_settings"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "node_post_update_configure_status_field_widget"
+        "value": "system_post_update_delete_rss_settings"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "node_post_update_node_revision_views_data"
+        "value": "system_post_update_enable_provider_database_driver"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_add_expand_all_items_key_in_system_menu_block"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_add_region_to_entity_displays"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_change_action_plugins"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_change_delete_action_plugins"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_classy_message_library"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_clear_menu_cache"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_entity_reference_autocomplete_match_limit"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_extra_fields"
+        "value": "system_post_update_entity_revision_metadata_bc_cleanup"
     },
     {
         "type": "post_update",
@@ -142,52 +122,42 @@
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_field_formatter_entity_schema"
+        "value": "system_post_update_remove_key_value_expire_all_index"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_field_type_plugins"
+        "value": "system_post_update_schema_version_int"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_fix_jquery_extend"
+        "value": "system_post_update_service_advisory_settings"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_hashes_clear_cache"
+        "value": "system_post_update_sort_all_config"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_language_item_callback"
+        "value": "system_post_update_uninstall_classy"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_layout_plugin_schema_change"
+        "value": "system_post_update_uninstall_entity_reference_module"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_recalculate_configuration_entity_dependencies"
+        "value": "system_post_update_uninstall_simpletest"
     },
     {
         "type": "post_update",
         "module": "",
-        "value": "system_post_update_states_clear_cache"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_timestamp_plugins"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "text_post_update_add_required_summary_flag"
+        "value": "system_post_update_uninstall_stable"
     },
     {
         "type": "post_update",
@@ -197,6 +167,11 @@
     {
         "type": "post_update",
         "module": "",
-        "value": "user_post_update_enforce_order_of_permissions"
+        "value": "update_post_update_add_view_update_notifications_permission"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "user_post_update_update_roles"
     }
 ]
