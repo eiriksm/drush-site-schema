@@ -16,7 +16,7 @@ jobs:
           - "7.2"
           - "7.3"
           - "7.4"
-        composer-version:
+        drupal_version:
           - "1"
           - "2"
     steps:
@@ -32,9 +32,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-
-      - name: Update composer
-        run: composer --verbose self-update --${{ matrix.composer-version }}
 
       - name: Dump composer verson
         run: composer --version
