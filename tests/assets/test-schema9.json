@@ -51,11 +51,6 @@
     },
     {
         "type": "schema",
-        "module": "user",
-        "value": "8100"
-    },
-    {
-        "type": "schema",
         "module": "minimal",
         "value": "8000"
     },
