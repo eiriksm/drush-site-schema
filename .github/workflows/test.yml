@@ -45,11 +45,21 @@ jobs:
       - name: Install dependencies
         run: composer --verbose install
 
-      - name: Run tests
+      - name: Install drupal 
+        if: matrix.drupal_version == "8"
         run: |
           cd .. && composer create-project drupal/recommended-project:8.8.6 test-project --no-interaction
           cd test-project
           composer require drush/drush:^9
+      - name: install drupal 
+        if: matrix.drupal_version == "9"
+         run: |
+          cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
+          cd test-project
+          composer require drush/drush:^10
+      - name: run tests
+        run: |
+          cd test-project
           ./vendor/bin/drush si minimal --db-url=sqlite://sites/default/files/.ht.sqlite -y
           mkdir -p drush/Commands/contrib
           cp -r ../drush-site-schema drush/Commands/contrib/site-schema
