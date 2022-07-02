@@ -61,8 +61,12 @@ jobs:
         run: |
           cd ../test-project
           composer require drush/drush:^${{ matrix.drush-version }}
+      - name: set skip flag
+        id: skip
+        if: ${{ matrix.drupal-version == '9' && matrix.php-version == '7.2' }}
+        run: echo "::set-output name=skip::1"
       - name: run tests
-        if: ${{ matrix.php-version != '7.2' && matrix.drupal-version != '9' }}
+        if: ${{ steps.skip.outputs.skip != '1' }}
         env:
           DRUPAL_VERSION: ${{ matrix.drupal-version }}
         run: |
