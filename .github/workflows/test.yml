@@ -46,24 +46,24 @@ jobs:
       - name: Install dependencies
         run: composer --verbose install
 
-      - name: Install drupal 
+      - name: Install drupal
         if: matrix.drupal-version == '8'
         run: |
           cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
           cd test-project
           composer require drush/drush:^9
-      - name: install drupal 
+      - name: install drupal
         if: ${{ matrix.drupal-version == '9' && matrix.php-version != '7.2' }}
         run: |
           cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
       - name: install Drush
-        if: ${{ matrix.drupal-version == '9' && matrix.php-version != '7.2' }}
+        if: ${{ matrix.drupal-version == '9' && matrix.php-version != '7.2' && matrix.drush-version != '9' }}
         run: |
           cd ../test-project
           composer require drush/drush:^${{ matrix.drush-version }}
       - name: set skip flag
         id: skip
-        if: ${{ matrix.drupal-version == '9' && matrix.php-version == '7.2' }}
+        if: ${{ (matrix.drupal-version == '9' && matrix.php-version == '7.2') || (matrix.drush-version == '9' && matrix.drupal-version == '9' }}
         run: echo "::set-output name=skip::1"
       - name: run tests
         if: ${{ steps.skip.outputs.skip != '1' }}
