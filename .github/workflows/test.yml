@@ -43,13 +43,13 @@ jobs:
         run: composer --verbose install
 
       - name: Install drupal 
-        if: matrix.drupal_version == "8"
+        if: matrix.drupal_version == '8'
         run: |
           cd .. && composer create-project drupal/recommended-project:8.8.6 test-project --no-interaction
           cd test-project
           composer require drush/drush:^9
       - name: install drupal 
-        if: matrix.drupal_version == "9"
+        if: matrix.drupal_version == '9'
         run: |
           cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
           cd test-project
