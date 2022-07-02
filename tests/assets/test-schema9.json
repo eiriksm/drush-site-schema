@@ -1,0 +1,217 @@
+[
+    {
+        "type": "schema",
+        "module": "block",
+        "value": "8003"
+    },
+    {
+        "type": "schema",
+        "module": "dblog",
+        "value": "8600"
+    },
+    {
+        "type": "schema",
+        "module": "dynamic_page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "field",
+        "value": "8500"
+    },
+    {
+        "type": "schema",
+        "module": "filter",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "node",
+        "value": "8700"
+    },
+    {
+        "type": "schema",
+        "module": "page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "path_alias",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "text",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "update",
+        "value": "8001"
+    },
+    {
+        "type": "schema",
+        "module": "user",
+        "value": "8100"
+    },
+    {
+        "type": "schema",
+        "module": "minimal",
+        "value": "8000"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "block_post_update_disable_blocks_with_missing_contexts"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "block_post_update_disabled_region_update"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "block_post_update_fix_negate_in_conditions"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "dblog_post_update_convert_recent_messages_to_view"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "field_post_update_email_widget_size_setting"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "field_post_update_entity_reference_handler_setting"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "field_post_update_remove_handler_submit_setting"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "field_post_update_save_custom_storage_property"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "node_post_update_configure_status_field_widget"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "node_post_update_node_revision_views_data"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_add_expand_all_items_key_in_system_menu_block"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_add_region_to_entity_displays"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_change_action_plugins"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_change_delete_action_plugins"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_classy_message_library"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_clear_menu_cache"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_entity_reference_autocomplete_match_limit"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_extra_fields"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_extra_fields_form_display"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_field_formatter_entity_schema"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_field_type_plugins"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_fix_jquery_extend"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_hashes_clear_cache"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_language_item_callback"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_layout_plugin_schema_change"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_recalculate_configuration_entity_dependencies"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_states_clear_cache"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_timestamp_plugins"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "text_post_update_add_required_summary_flag"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "text_post_update_add_required_summary_flag_form_display"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "user_post_update_enforce_order_of_permissions"
+    }
+]
