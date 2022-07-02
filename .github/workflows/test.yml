@@ -58,7 +58,7 @@ jobs:
           cd test-project
           composer require drush/drush:^9
       - name: install drupal
-        if: ${{ steps.skip.outputs.skip != '1' }}
+        if: ${{ matrix.drupal-version == '9' && steps.skip.outputs.skip != '1' }}
         run: |
           cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
       - name: install Drush
