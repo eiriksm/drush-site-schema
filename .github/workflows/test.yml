@@ -56,7 +56,6 @@ jobs:
         run: |
           cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
           cd test-project
-          composer require drush/drush:^9
       - name: install drupal
         if: ${{ matrix.drupal-version == '9' && steps.skip.outputs.skip != '1' }}
         run: |
