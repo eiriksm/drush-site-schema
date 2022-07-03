@@ -48,7 +48,7 @@ jobs:
 
       - name: set skip flag
         id: skip
-        if: ${{ (matrix.drupal-version == '9' && matrix.php-version == '7.2') || (matrix.drush-version == '9' && matrix.drupal-version == '9') || (matrix.drush-version == '11' && matrix.php-version == '7.3') || (matrix.drush-version == '11' && matrix.php-version == '7.2') }}
+        if: ${{ (matrix.drupal-version == '9' && matrix.php-version == '7.2') || (matrix.drush-version == '9' && matrix.drupal-version == '9') || (matrix.drush-version == '11' && matrix.php-version == '7.3') || (matrix.drush-version == '11' && matrix.php-version == '7.2') || (matrix.drupal-version == '8' && matrix.drush.version == '11') }}
         run: echo "::set-output name=skip::1"
 
       - name: Install drupal
