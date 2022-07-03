@@ -1,0 +1,177 @@
+[
+    {
+        "type": "schema",
+        "module": "block",
+        "value": "8003"
+    },
+    {
+        "type": "schema",
+        "module": "dblog",
+        "value": "8600"
+    },
+    {
+        "type": "schema",
+        "module": "dynamic_page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "field",
+        "value": "8500"
+    },
+    {
+        "type": "schema",
+        "module": "filter",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "minimal",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "node",
+        "value": "8700"
+    },
+    {
+        "type": "schema",
+        "module": "page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "path_alias",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "sqlite",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "system",
+        "value": "8901"
+    },
+    {
+        "type": "schema",
+        "module": "text",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "update",
+        "value": "8001"
+    },
+    {
+        "type": "schema",
+        "module": "user",
+        "value": "9301"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "block_post_update_replace_node_type_condition"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "node_post_update_glossary_view_published"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "node_post_update_modify_base_field_author_override"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "node_post_update_rebuild_node_revision_routes"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_claro_dropbutton_variants"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_delete_authorize_settings"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_delete_rss_settings"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_enable_provider_database_driver"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_entity_revision_metadata_bc_cleanup"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_extra_fields_form_display"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_remove_key_value_expire_all_index"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_schema_version_int"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_service_advisory_settings"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_sort_all_config"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_uninstall_classy"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_uninstall_entity_reference_module"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_uninstall_simpletest"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_uninstall_stable"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "text_post_update_add_required_summary_flag_form_display"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "update_post_update_add_view_update_notifications_permission"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "user_post_update_update_roles"
+    }
+]

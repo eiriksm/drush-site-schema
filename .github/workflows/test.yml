@@ -1,0 +1,83 @@
+name: Test
+on:
+  - push
+  - pull_request
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: 'ubuntu-20.04'
+    env:
+      SCHEMA_PATH: /tmp/test-schema.json
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "7.2"
+          - "7.3"
+          - "7.4"
+        drupal-version:
+          - "8"
+          - "9"
+        drush-version:
+          - "9"
+          - "10"
+          - "11"
+    steps:
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Dump composer verson
+        run: composer --version
+
+      - name: Validate composer.json
+        run: composer --verbose validate
+
+      - name: Install dependencies
+        run: composer --verbose install
+
+      - name: set skip flag
+        id: skip
+        if: ${{ (matrix.drupal-version == '9' && matrix.php-version == '7.2') || (matrix.drush-version == '9' && matrix.drupal-version == '9') || (matrix.drush-version == '11' && matrix.php-version == '7.3') || (matrix.drush-version == '11' && matrix.php-version == '7.2') || (matrix.drupal-version == '8' && matrix.drush-version == '11') }}
+        run: echo "::set-output name=skip::1"
+
+      - name: Install drupal
+        if: matrix.drupal-version == '8'
+        run: |
+          cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
+          cd test-project
+      - name: install drupal
+        if: ${{ matrix.drupal-version == '9' && steps.skip.outputs.skip != '1' }}
+        run: |
+          cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
+      - name: install Drush
+        if: ${{ steps.skip.outputs.skip != '1' }}
+        run: |
+          cd ../test-project
+          composer require drush/drush:^${{ matrix.drush-version }}
+      - name: run tests
+        if: ${{ steps.skip.outputs.skip != '1' }}
+        env:
+          DRUPAL_VERSION: ${{ matrix.drupal-version }}
+        run: |
+          cd ..
+          cd test-project
+          composer config --no-plugins allow-plugins.composer/installers true
+          composer config --no-plugins allow-plugins.drupal/core-composer-scaffold true
+          composer install
+          ./vendor/bin/drush si minimal --db-url=sqlite://sites/default/files/.ht.sqlite -y
+          mkdir -p drush/Commands/contrib
+          cp -r ../drush-site-schema drush/Commands/contrib/site-schema
+          ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH
+          cd ../drush-site-schema
+          ./vendor/bin/phpunit

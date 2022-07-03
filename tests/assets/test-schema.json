@@ -46,11 +46,6 @@
     },
     {
         "type": "schema",
-        "module": "system",
-        "value": "8805"
-    },
-    {
-        "type": "schema",
         "module": "text",
         "value": "8000"
     },
@@ -178,11 +173,6 @@
         "type": "post_update",
         "module": "",
         "value": "system_post_update_fix_jquery_extend"
-    },
-    {
-        "type": "post_update",
-        "module": "",
-        "value": "system_post_update_fix_jquery_htmlprefilter"
     },
     {
         "type": "post_update",

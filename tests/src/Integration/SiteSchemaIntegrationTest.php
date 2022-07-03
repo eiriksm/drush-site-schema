@@ -15,6 +15,12 @@ class SiteSchemaIntegrationTest extends TestCase {
     $data = json_decode(file_get_contents($filepath));
     // It should at least contain all of the things we had when we made this.
     $expected_contents = json_decode(file_get_contents(__DIR__ . '/../../assets/test-schema.json'));
+    if (getenv('DRUPAL_VERSION')) {
+      $filename = __DIR__ . '/../../assets/test-schema' . getenv('DRUPAL_VERSION') . '.json';
+      if (file_exists($filename)) {
+        $expected_contents = json_decode(file_get_contents($filename));
+      }
+    }
     foreach ($expected_contents as $item) {
       // We expect it to be in the generated one.
       foreach ($data as $generated_item) {
