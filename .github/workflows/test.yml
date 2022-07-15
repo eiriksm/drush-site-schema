@@ -61,6 +61,9 @@ jobs:
         if: ${{ matrix.drupal-version == '9' && steps.skip.outputs.skip != '1' }}
         run: |
           cd .. && composer create-project --no-install drupal/recommended-project:9.4.1 test-project --no-interaction
+          composer config --no-plugins allow-plugins.drupal/core-project-message true
+          composer config --no-plugins allow-plugins.composer/installers true
+          composer config --no-plugins allow-plugins.drupal/core-composer-scaffold true
       - name: install Drush
         if: ${{ steps.skip.outputs.skip != '1' }}
         run: |
@@ -73,9 +76,6 @@ jobs:
         run: |
           cd ..
           cd test-project
-          composer config --no-plugins allow-plugins.drupal/core-project-message true
-          composer config --no-plugins allow-plugins.composer/installers true
-          composer config --no-plugins allow-plugins.drupal/core-composer-scaffold true
           composer install
           ./vendor/bin/drush si minimal --db-url=sqlite://sites/default/files/.ht.sqlite -y
           mkdir -p drush/Commands/contrib
