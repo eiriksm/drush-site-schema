@@ -1,6 +1,6 @@
 # drush site-schema
 
-[![Build Status](https://travis-ci.com/eiriksm/drush-site-schema.svg?branch=master)](https://travis-ci.com/eiriksm/drush-site-schema)
+[![Test](https://github.com/eiriksm/drush-site-schema/actions/workflows/test.yml/badge.svg)](https://github.com/eiriksm/drush-site-schema/actions/workflows/test.yml)
 [![Packagist](https://img.shields.io/packagist/v/eiriksm/site-schema.svg)](https://packagist.org/packages/eiriksm/site-schema)
 
 Get the complete picture of a Drupal site schema (updates and post updates).
