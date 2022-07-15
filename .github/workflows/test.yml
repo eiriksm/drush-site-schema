@@ -53,7 +53,7 @@ jobs:
         run: echo "::set-output name=skip::1"
 
       - name: Install drupal
-        if: matrix.drupal-version == '8'
+        if: ${{ matrix.drupal-version == '8' && steps.skip.outputs.skip != '1' }}
         run: |
           cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
       - name: install drupal
