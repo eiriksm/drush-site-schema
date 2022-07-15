@@ -60,7 +60,7 @@ jobs:
       - name: install drupal
         if: ${{ matrix.drupal-version == '9' && steps.skip.outputs.skip != '1' }}
         run: |
-          cd .. && composer create-project drupal/recommended-project:9.4.1 test-project --no-interaction
+          cd .. && composer create-project --no-install drupal/recommended-project:9.4.1 test-project --no-interaction
       - name: install Drush
         if: ${{ steps.skip.outputs.skip != '1' }}
         run: |
