@@ -25,6 +25,21 @@ jobs:
           - "9"
           - "10"
           - "11"
+        exclude:
+          - php-version: 7.2
+            drupal-version: 9
+          - drush-version: 9
+            drupal-version: 9
+          - drush-version: 11
+            php-version: 7.3
+          - drush-version: 11
+            php-version: 7.2
+          - drush-version: 11
+            drupal-version: 8
+          - drupal-version: 8
+            php-version: 8.0
+          - drupal-version: 8
+            php-version: 8.1
     steps:
       - name: Dump matrix context
         env:
@@ -48,21 +63,15 @@ jobs:
       - name: Install dependencies
         run: composer --verbose install
 
-      - name: set skip flag
-        id: skip
-        if: ${{ (matrix.drupal-version == '9' && matrix.php-version == '7.2') || (matrix.drush-version == '9' && matrix.drupal-version == '9') || (matrix.drush-version == '11' && matrix.php-version == '7.3') || (matrix.drush-version == '11' && matrix.php-version == '7.2') || (matrix.drupal-version == '8' && matrix.drush-version == '11') || (matrix.drupal-version == '8' && matrix.php-version == '8.0') || (matrix.drupal-version == '8' && matrix.php-version == '8.1') }}
-        run: echo "::set-output name=skip::1"
-
       - name: Install drupal
-        if: ${{ matrix.drupal-version == '8' && steps.skip.outputs.skip != '1' }}
+        if: ${{ matrix.drupal-version == '8' }}
         run: |
           cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
       - name: install drupal
-        if: ${{ matrix.drupal-version == '9' && steps.skip.outputs.skip != '1' }}
+        if: ${{ matrix.drupal-version == '9' }}
         run: |
           cd .. && composer create-project --no-plugins drupal/recommended-project:9.4.1 test-project --no-interaction
       - name: install Drush
-        if: ${{ steps.skip.outputs.skip != '1' }}
         run: |
           cd ../test-project
           composer config --no-plugins allow-plugins.drupal/core-project-message true
@@ -70,7 +79,6 @@ jobs:
           composer config --no-plugins allow-plugins.drupal/core-composer-scaffold true
           composer require drush/drush:^${{ matrix.drush-version }}
       - name: run tests
-        if: ${{ steps.skip.outputs.skip != '1' }}
         env:
           DRUPAL_VERSION: ${{ matrix.drupal-version }}
         run: |
