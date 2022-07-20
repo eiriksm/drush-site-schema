@@ -25,6 +25,9 @@ jobs:
           - "9"
           - "10"
           - "11"
+        exclude:
+          - php-version: 7.2
+            drupal-version: 9
         
     steps:
       - name: Dump matrix context
