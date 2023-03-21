@@ -32,6 +32,9 @@ class SiteSchemaIntegrationTest extends TestCase {
       }
       throw new \Exception('An expected item was not found in the generated file: ' . print_r($item, TRUE));
     }
+    if (count($data)) {
+      print_r($data);
+    }
     self::assertCount(0, $data, 'An unexpected item was found in the generated JSON file');
     $this->assertTrue(TRUE, 'All expected items were found in the generated json file');
   }
