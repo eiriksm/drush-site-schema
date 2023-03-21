@@ -8,7 +8,7 @@ jobs:
     name: Run tests
     runs-on: 'ubuntu-20.04'
     env:
-      SCHEMA_PATH: /tmp/test-schema.json
+      SCHEMA_PATH: /tmp
     strategy:
       fail-fast: false
       matrix:
@@ -88,6 +88,10 @@ jobs:
           ./vendor/bin/drush si minimal --db-url=sqlite://sites/default/files/.ht.sqlite -y
           mkdir -p drush/Commands/contrib
           cp -r ../drush-site-schema drush/Commands/contrib/site-schema
-          ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH
+          ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH/test-schema.json
+          # Now do another one, but this time with some modules excluded
+          chmod 777 web/sites/default/settings.php
+          echo '$settings["drush_site_schema_disabled_modules"] = ["dblog"];' >> web/sites/default/settings.php
+          ./vendor/bin/drush site-schema --format=json > $SCHEMA_PATH/test-schema.json-excluded
           cd ../drush-site-schema
           ./vendor/bin/phpunit
