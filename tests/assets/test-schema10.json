@@ -1,0 +1,1 @@
+Error: Call to undefined function Drush\Commands\site_schema\drupal_get_installed_schema_version() in Drush\Commands\site_schema\SiteSchemaCommand->schema() (line 38 of /home/eirik/github/drush-site-schema/recommended-project/drush/Commands/contrib/site-schema/SiteSchemaCommand.php).
