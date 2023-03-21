@@ -31,6 +31,11 @@
     },
     {
         "type": "schema",
+        "module": "minimal",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
         "module": "node",
         "value": "8700"
     },
@@ -46,6 +51,11 @@
     },
     {
         "type": "schema",
+        "module": "system",
+        "value": "8901"
+    },
+    {
+        "type": "schema",
         "module": "text",
         "value": "8000"
     },
@@ -58,11 +68,6 @@
         "type": "schema",
         "module": "user",
         "value": "8100"
-    },
-    {
-        "type": "schema",
-        "module": "minimal",
-        "value": "8000"
     },
     {
         "type": "post_update",
@@ -108,6 +113,11 @@
         "type": "post_update",
         "module": "",
         "value": "node_post_update_configure_status_field_widget"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "node_post_update_glossary_view_published"
     },
     {
         "type": "post_update",
