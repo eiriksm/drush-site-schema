@@ -23,14 +23,16 @@ class SiteSchemaIntegrationTest extends TestCase {
     }
     foreach ($expected_contents as $item) {
       // We expect it to be in the generated one.
-      foreach ($data as $generated_item) {
+      foreach ($data as $delta => $generated_item) {
         if ($item->type !== $generated_item->type || $item->module !== $generated_item->module || $item->value !== $generated_item->value) {
           continue;
         }
+        unset($data[$delta]);
         continue 2;
       }
       throw new \Exception('An expected item was not found in the generated file: ' . print_r($item, TRUE));
     }
+    self::assertCount(0, $data, 'An unexpected item was found in the generated JSON file');
     $this->assertTrue(TRUE, 'All expected items were found in the generated json file');
   }
 
