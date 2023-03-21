@@ -35,7 +35,13 @@ class SiteSchemaCommand extends DrushCommands {
     $method->invoke($registry);
     $method = $reflected->getMethod('getAvailableUpdateFunctions');
     $method->setAccessible(TRUE);
-    $enabled_prop = $reflected->getProperty('enabledExtensions');
+    try {
+      $enabled_prop = $reflected->getProperty('enabledExtensions');
+    }
+    catch (\Throwable $e) {
+      // On Drupal 8 it's called this.
+      $enabled_prop = $reflected->getProperty('enabledModules');
+    }
     $enabled_prop->setAccessible(TRUE);
     $current = $enabled_prop->getValue($registry);
     $disabled_modules = Settings::get('drush_site_schema_disabled_modules', []);
