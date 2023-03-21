@@ -21,6 +21,7 @@ jobs:
         drupal-version:
           - "8"
           - "9"
+          - "10"
         drush-version:
           - "9"
           - "10"
@@ -30,6 +31,10 @@ jobs:
             drupal-version: 9
           - drush-version: 9
             drupal-version: 9
+          - drush-version: 9
+            drupal-version: 10
+          - drush-version: 10
+            drupal-version: 10
           - drush-version: 11
             php-version: 7.3
           - drush-version: 11
@@ -40,6 +45,14 @@ jobs:
             php-version: 8.0
           - drupal-version: 8
             php-version: 8.1
+          - drupal-version: 10
+            php-version: 7.2
+          - drupal-version: 10
+            php-version: 7.3
+          - drupal-version: 10
+            php-version: 7.4
+          - drupal-version: 10
+            php-version: 8.0
     steps:
       - name: Dump matrix context
         env:
@@ -71,6 +84,10 @@ jobs:
         if: ${{ matrix.drupal-version == '9' }}
         run: |
           cd .. && composer create-project --no-plugins drupal/recommended-project:9.4.1 test-project --no-interaction
+      - name: install drupal
+        if: ${{ matrix.drupal-version == '10' }}
+        run: |
+          cd .. && composer create-project --no-plugins drupal/recommended-project:10.0.5 test-project --no-interaction
       - name: install Drush
         run: |
           cd ../test-project

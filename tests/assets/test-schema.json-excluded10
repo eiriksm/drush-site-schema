@@ -1,0 +1,72 @@
+[
+    {
+        "type": "schema",
+        "module": "block",
+        "value": "8003"
+    },
+    {
+        "type": "schema",
+        "module": "dynamic_page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "field",
+        "value": "8500"
+    },
+    {
+        "type": "schema",
+        "module": "filter",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "minimal",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "node",
+        "value": "8700"
+    },
+    {
+        "type": "schema",
+        "module": "page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "path_alias",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "sqlite",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "system",
+        "value": "8901"
+    },
+    {
+        "type": "schema",
+        "module": "text",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "update",
+        "value": "8001"
+    },
+    {
+        "type": "schema",
+        "module": "user",
+        "value": "10000"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "user_post_update_sort_permissions"
+    }
+]
