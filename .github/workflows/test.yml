@@ -32,6 +32,8 @@ jobs:
             drupal-version: 9
           - php-version: 8.2
             drupal-version: 8
+          - php-version: 8.2
+            drupal-version: 9
           - drush-version: 9
             drupal-version: 9
           - drush-version: 9
