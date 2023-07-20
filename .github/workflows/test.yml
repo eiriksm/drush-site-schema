@@ -27,6 +27,7 @@ jobs:
           - "9"
           - "10"
           - "11"
+          - "12"
         exclude:
           - php-version: 7.2
             drupal-version: 9
@@ -58,6 +59,10 @@ jobs:
             php-version: 7.4
           - drupal-version: 10
             php-version: 8.0
+          - drush-version: 12
+            drupal-version: 8
+          - drush-version: 12
+            drupal-version: 9
     steps:
       - name: Dump matrix context
         env:
