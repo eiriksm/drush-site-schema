@@ -6,7 +6,7 @@ on:
 jobs:
   test:
     name: Run tests
-    runs-on: 'ubuntu-20.04'
+    runs-on: 'ubuntu-latest'
     env:
       SCHEMA_PATH: /tmp
     strategy:
@@ -19,15 +19,19 @@ jobs:
           - "8.0"
           - "8.1"
           - "8.2"
+          - "8.3"
+          - "8.4"
         drupal-version:
           - "8"
           - "9"
           - "10"
+          - "11"
         drush-version:
           - "9"
           - "10"
           - "11"
           - "12"
+          - "13"
         exclude:
           - php-version: 7.2
             drupal-version: 9
