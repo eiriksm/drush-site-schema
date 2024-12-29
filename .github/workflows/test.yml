@@ -45,6 +45,16 @@ jobs:
             php-version: 8.0
           - drush-version: 13
             php-version: 8.1
+          - php-version: 8.2
+            drupal-version: 11
+          - php-version: 8.1
+            drupal-version: 11
+          - php-version: 8.0
+            drupal-version: 11
+          - php-version: 7.4
+            drupal-version: 11
+          - php-version: 7.3
+            drupal-version: 11
     steps:
       - name: Dump matrix context
         env:
