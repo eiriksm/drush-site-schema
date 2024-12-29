@@ -1,0 +1,92 @@
+[
+    {
+        "type": "schema",
+        "module": "block",
+        "value": "8003"
+    },
+    {
+        "type": "schema",
+        "module": "dblog",
+        "value": "10101"
+    },
+    {
+        "type": "schema",
+        "module": "dynamic_page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "field",
+        "value": "8500"
+    },
+    {
+        "type": "schema",
+        "module": "filter",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "minimal",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "node",
+        "value": "8700"
+    },
+    {
+        "type": "schema",
+        "module": "page_cache",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "path_alias",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "sqlite",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "system",
+        "value": "11102"
+    },
+    {
+        "type": "schema",
+        "module": "text",
+        "value": "8000"
+    },
+    {
+        "type": "schema",
+        "module": "update",
+        "value": "8001"
+    },
+    {
+        "type": "schema",
+        "module": "user",
+        "value": "10000"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "block_post_update_make_weight_integer"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "path_alias_post_update_update_path_alias_revision_indexes"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_convert_empty_country_and_timezone_settings_to_null"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_sdc_uninstall"
+    }
+]
