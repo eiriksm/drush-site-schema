@@ -47,7 +47,7 @@
     {
         "type": "schema",
         "module": "system",
-        "value": "8901"
+        "value": "10201"
     },
     {
         "type": "schema",
@@ -67,6 +67,81 @@
     {
         "type": "post_update",
         "module": "",
+        "value": "filter_post_update_sort_filters"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "path_alias_post_update_drop_path_alias_status_index"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_add_description_to_entity_form_mode"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_add_description_to_entity_view_mode"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_enable_password_compatibility"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_linkset_settings"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_mailer_dsn_settings"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_mailer_structured_dsn_settings"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_remove_asset_entries"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_remove_asset_query_string"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_set_blank_log_url_to_null"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "system_post_update_timestamp_formatter"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "text_post_update_allowed_formats"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "update_post_update_set_blank_fetch_url_to_null"
+    },
+    {
+        "type": "post_update",
+        "module": "",
         "value": "user_post_update_sort_permissions"
+    },
+    {
+        "type": "post_update",
+        "module": "",
+        "value": "user_post_update_sort_permissions_again"
     }
 ]
