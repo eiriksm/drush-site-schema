@@ -39,7 +39,6 @@ jobs:
             php-version: 8.0
           - drush-version: 12
             drupal-version: 9
-
           - drush-version: 13
             php-version: 7.4
           - drush-version: 13
@@ -56,7 +55,6 @@ jobs:
             drupal-version: 11
           - php-version: 7.3
             drupal-version: 11
-
           - drush-version: 11
             drupal-version: 10
 
