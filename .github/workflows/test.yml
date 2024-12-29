@@ -21,17 +21,12 @@ jobs:
           - "9"
           - "10"
         drush-version:
-          - "9"
           - "10"
           - "11"
           - "12"
         exclude:
           - php-version: 8.2
             drupal-version: 9
-          - drush-version: 9
-            drupal-version: 9
-          - drush-version: 9
-            drupal-version: 10
           - drush-version: 10
             drupal-version: 10
           - drupal-version: 10
