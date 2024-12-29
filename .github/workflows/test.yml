@@ -33,6 +33,8 @@ jobs:
             drupal-version: 9
           - drush-version: 10
             drupal-version: 10
+          - drush-version: 10
+            drupal-version: 11
           - drupal-version: 10
             php-version: 7.4
           - drupal-version: 10
