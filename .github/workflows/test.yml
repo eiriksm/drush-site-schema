@@ -18,7 +18,6 @@ jobs:
           - "8.1"
           - "8.2"
         drupal-version:
-          - "8"
           - "9"
           - "10"
         drush-version:
@@ -27,10 +26,6 @@ jobs:
           - "11"
           - "12"
         exclude:
-          - php-version: 7.2
-            drupal-version: 9
-          - php-version: 8.2
-            drupal-version: 8
           - php-version: 8.2
             drupal-version: 9
           - drush-version: 9
@@ -39,26 +34,10 @@ jobs:
             drupal-version: 10
           - drush-version: 10
             drupal-version: 10
-          - drush-version: 11
-            php-version: 7.3
-          - drush-version: 11
-            php-version: 7.2
-          - drush-version: 11
-            drupal-version: 8
-          - drupal-version: 8
-            php-version: 8.0
-          - drupal-version: 8
-            php-version: 8.1
-          - drupal-version: 10
-            php-version: 7.2
-          - drupal-version: 10
-            php-version: 7.3
           - drupal-version: 10
             php-version: 7.4
           - drupal-version: 10
             php-version: 8.0
-          - drush-version: 12
-            drupal-version: 8
           - drush-version: 12
             drupal-version: 9
     steps:
@@ -83,11 +62,7 @@ jobs:
 
       - name: Install dependencies
         run: composer --verbose install
-
-      - name: Install drupal
-        if: ${{ matrix.drupal-version == '8' }}
-        run: |
-          cd .. && composer create-project drupal/recommended-project:8.9.20 test-project --no-interaction
+      
       - name: install drupal
         if: ${{ matrix.drupal-version == '9' }}
         run: |
